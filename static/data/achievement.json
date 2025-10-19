@@ -1,0 +1,5 @@
+[
+    {"id": "math_pioneer", "name": "Math Pioneer", "description": "Complete 10 math quizzes.", "icon": "🧮"},
+    {"id": "science_whiz", "name": "Science Whiz", "description": "Get a perfect score in a science quiz.", "icon": "🔬"},
+    {"id": "streak_star", "name": "Streak Star", "description": "Log in for 7 consecutive days.", "icon": "🌟"}
+]

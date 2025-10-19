@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}Welcome to EduQuest{% endblock %}
+{% block content %}
+<div class="main-screen">
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="content-center">
+        <h1>EduQuest 🚀</h1>
+        <p>Your Galactic Journey into STEM!</p>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-primary">Enter the Portal</a>
+    </div>
+</div>
+{% endblock %}

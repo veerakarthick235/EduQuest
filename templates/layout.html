@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}EduQuest{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="main-header">
+        <nav>
+            <a href="{{ url_for('dashboard') }}" data-lang="galaxy_map">Galaxy Map</a>
+            <a href="{{ url_for('store') }}" data-lang="store_link">Avatar Store</a>
+            <a href="{{ url_for('achievements') }}" data-lang="achievements_link">Achievements</a>
+        </nav>
+        <div class="header-controls">
+            <div class="user-stats">
+                <span id="user-points">💎 0</span>
+                <span id="user-streak">🔥 0</span>
+            </div>
+            <button id="sync-button" title="Sync Progress">🔄</button>
+            <select id="language-toggle">
+                <option value="en">English</option>
+                <option value="ta">தமிழ்</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script> <script src="{{ url_for('static', filename='js/database.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/gamification.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/store.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/language.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sync.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/simulations.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/tutor.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

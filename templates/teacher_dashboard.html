@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block title %}Teacher Dashboard{% endblock %}
+{% block content %}
+<main class="teacher-main">
+    <h1>Teacher Analytics Portal</h1>
+    
+    <div class="teacher-grid">
+        <div class="stat-card">
+            <h3>Class Average</h3>
+            <p>82%</p>
+        </div>
+        <div class="stat-card">
+            <h3>Total Students</h3>
+            <p>34</p>
+        </div>
+        <div class="stat-card">
+            <h3>Most Difficult Topic</h3>
+            <p>Physics: Kinematics</p>
+        </div>
+    </div>
+
+    <h2>Student Progress</h2>
+    <div class="student-table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Points</th>
+                    <th>Streak</th>
+                    <th>Last Login</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Karthick</td>
+                    <td>1550</td>
+                    <td>7 🔥</td>
+                    <td>Today</td>
+                </tr>
+                <tr>
+                    <td>Loki</td>
+                    <td>1400</td>
+                    <td>5 🔥</td>
+                    <td>Today</td>
+                </tr>
+                <tr>
+                    <td>Arjun</td>
+                    <td>1200</td>
+                    <td>1</td>
+                    <td>Yesterday</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock %}

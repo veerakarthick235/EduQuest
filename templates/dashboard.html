@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<main class="dashboard-main">
+    <div class="left-panel">
+        <h2 id="dashboard-greeting" data-lang="dashboard_greeting">Welcome, Commander</h2>
+        <div id="avatar-display">
+            </div>
+        <h3>Classroom Leaderboard</h3>
+        <ul id="leaderboard">
+            <li>Loading...</li>
+        </ul>
+    </div>
+    <div class="galaxy-map-container">
+        <h2 data-lang="galaxy_map">Galaxy Map</h2>
+        <div class="galaxy-map">
+            <div class="star-system" id="math-system">
+                <div class="star" data-subject="math">Math</div>
+                <div class="planet" data-topic="algebra"></div>
+                <div class="planet" data-topic="geometry"></div>
+            </div>
+            <div class="star-system" id="science-system">
+                <div class="star" data-subject="science">Science</div>
+                <div class="planet" data-topic="physics"></div>
+                <div class="planet locked" data-topic="chemistry"></div>
+            </div>
+        </div>
+    </div>
+    <div class="right-panel">
+        <h3>STEM Sandbox</h3>
+        <div id="simulation-container"></div>
+        <button id="reset-sim-button" class="btn-ghost">Reset Sandbox</button>
+    </div>
+</main>
+{% endblock %}
