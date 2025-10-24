@@ -1,6 +1,6 @@
 [
-    {"id": "helmet1", "name": "Standard Helmet", "price": 100, "type": "helmet", "image": "/static/images/helmet1.png"},
-    {"id": "helmet2", "name": "Nova Helmet", "price": 500, "type": "helmet", "image": "/static/images/helmet2.png"},
-    {"id": "suit1", "name": "Standard Suit", "price": 150, "type": "suit", "image": "/static/images/suit1.png"},
-    {"id": "suit2", "name": "Explorer Suit", "price": 600, "type": "suit", "image": "/static/images/suit2.png"}
+    {"id": "helmet1", "name": "Standard Helmet", "price": 100, "type": "helmet", "image": "https://placehold.co/150x150/1a1a3a/00ffff?text=Standard+Helmet"},
+    {"id": "helmet2", "name": "Nova Helmet", "price": 500, "type": "helmet", "image": "https://placehold.co/150x150/1a1a3a/00ffff?text=Nova+Helmet"},
+    {"id": "suit1", "name": "Standard Suit", "price": 150, "type": "suit", "image": "https://placehold.co/150x150/1a1a3a/00ffff?text=Standard+Suit"},
+    {"id": "suit2", "name": "Explorer Suit", "price": 600, "type": "suit", "image": "https://placehold.co/150x150/1a1a3a/00ffff?text=Explorer+Suit"}
 ]
