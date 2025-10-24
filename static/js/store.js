@@ -18,9 +18,17 @@ function initStore() {
             buttonHtml = `<button class="btn" data-item-id="${item.id}" data-item-price="${item.price}" onclick="buyItem(this)">Buy (💎 ${item.price})</button>`;
         }
 
+        // --- THIS PART IS NEW ---
+        // Replaced the <img> tag with a styled <div>
+        const placeholderImg = `
+            <div class="item-placeholder-img">
+                <span>${item.name}</span>
+            </div>
+        `;
+
         return `
             <div class="store-item-card">
-                <img src="${item.image}" alt="${item.name}">
+                ${placeholderImg}
                 <h3>${item.name}</h3>
                 ${buttonHtml}
             </div>
@@ -60,7 +68,7 @@ async function equipItem(button) {
     initStore();
 }
 
-// This function is for the dashboard avatar
+// --- THIS FUNCTION IS UPDATED ---
 function initAvatar() {
     const avatarDisplay = document.getElementById('avatar-display');
     if (!avatarDisplay) return;
@@ -73,12 +81,22 @@ function initAvatar() {
     // Find and add helmet
     const helmet = allItems.find(item => item.id === equipped.helmet);
     if (helmet) {
-        avatarDisplay.innerHTML += `<img src="${helmet.image}" class="avatar-part helmet">`;
+        // Replaced <img> with a styled <div>
+        avatarDisplay.innerHTML += `
+            <div class="avatar-placeholder-part helmet-placeholder">
+                <span>${helmet.name}</span>
+            </div>
+        `;
     }
 
     // Find and add suit
     const suit = allItems.find(item => item.id === equipped.suit);
     if (suit) {
-        avatarDisplay.innerHTML += `<img src="${suit.image}" class="avatar-part suit">`;
+        // Replaced <img> with a styled <div>
+        avatarDisplay.innerHTML += `
+            <div class="avatar-placeholder-part suit-placeholder">
+                <span>${suit.name}</span>
+            </div>
+        `;
     }
 }
