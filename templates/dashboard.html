@@ -10,7 +10,14 @@
         <ul id="leaderboard">
             <li>Loading...</li>
         </ul>
-    </div>
+
+        <h3>Daily Challenge</h3>
+        <div class="challenge-card">
+            <h4>Logic Puzzle</h4>
+            <p>Complete the 'Logic Puzzles' quiz for a +50 point bonus!</p>
+            <button class="btn-ghost" onclick="loadGame('logic_puzzles')">Accept</button>
+        </div>
+        </div>
     <div class="galaxy-map-container">
         <h2 data-lang="galaxy_map">Galaxy Map</h2>
         <div class="galaxy-map">
@@ -24,7 +31,25 @@
                 <div class="planet" data-topic="physics"></div>
                 <div class="planet locked" data-topic="chemistry"></div>
             </div>
-        </div>
+
+            <div class="star-system" id="tech-system">
+                <div class="star" data-subject="tech">Technology</div>
+                <div class="planet" data-topic="logic_puzzles"></div>
+                <div class="planet" data-topic="algorithms"></div>
+            </div>
+            
+            <div class="star-system" id="engineering-system">
+                <div class="star" data-subject="engineering">Engineering</div>
+                <div class="planet" data-topic="bridge_design"></div>
+                <div class="planet locked" data-topic="circuits"></div>
+            </div>
+
+            <div class="star-system" id="agri-system">
+                <div class="star" data-subject="agri-stem">Agri-STEM</div>
+                <div class="planet" data-topic="crop_science"></div>
+                <div class="planet locked" data-topic="water_mgmt"></div>
+            </div>
+            </div>
     </div>
     <div class="right-panel">
         <h3>STEM Sandbox</h3>
