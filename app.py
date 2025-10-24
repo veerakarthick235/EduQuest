@@ -30,11 +30,11 @@ def achievements():
 def teacher_dashboard():
     return render_template('teacher_dashboard.html')
 
-# --- NEW ROUTE FOR REGISTRATION ---
+# --- THIS IS THE MISSING ROUTE ---
 @app.route('/register')
 def register():
     return render_template('register.html')
-# --- END OF NEW ROUTE ---
+# --- END OF MISSING ROUTE ---
 
 
 # --- API Endpoints ---
@@ -61,8 +61,9 @@ def get_quiz(topic_id):
 def get_hint(question_id):
     """Fetches hints for a specific question ID."""
     all_hints = load_json_data('static/data/tutor_hints.json')
-    hints = all_hints.get(questionId)
+    hints = all_hints.get(question_id)
     if hints:
+        # Return the list of hints
         return jsonify(hints)
     else:
         return jsonify({"error": "Hints not found"}), 404
