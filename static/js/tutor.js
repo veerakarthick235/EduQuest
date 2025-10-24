@@ -1,28 +1,67 @@
-// This file doesn't need an 'init' function, just a function to be called by the game logic
+function initSync() {
+    const syncButton = document.getElementById('sync-button');
+    if (!syncButton) return;
 
-function getTutorHint(questionId) {
-    const allHints = window.appData.tutor_hints;
-    
-    if (allHints && allHints[questionId]) {
-        const hints = allHints[questionId];
-        // Return a random hint from the available hints for that question
-        const randomHint = hints[Math.floor(Math.random() * hints.length)];
-        return randomHint;
-    } else {
-        return "Sorry, I don't have a specific hint for this question. Try re-reading the topic!";
-    }
+    // Check online status
+    updateSyncStatus();
+    window.addEventListener('online', updateSyncStatus);
+    window.addEventListener('offline', updateSyncStatus);
+
+    syncButton.addEventListener('click', async () => {
+        if (!navigator.onLine) {
+            alert('Cannot sync. You are offline.');
+            return;
+        }
+
+        syncButton.classList.add('syncing');
+        syncButton.textContent = '...';
+        syncButton.disabled = true;
+
+        try {
+            // Get all user data to send
+            const achievements = await getData('userData', 'unlockedAchievements') || [];
+            const userData = await getData('userData', 'currentUser');
+            
+            const response = await fetch('/api/sync', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    userData: userData,
+                    achievements: achievements
+                })
+            });
+
+            if (response.ok) {
+                localStorage.setItem('lastSync', new Date().toISOString());
+                console.log('Sync successful');
+            } else {
+                throw new Error('Sync failed on server');
+            }
+
+        } catch (error) {
+            console.error('Sync error:', error);
+            alert('Sync failed. Please try again later.');
+        } finally {
+            syncButton.classList.remove('syncing');
+            updateSyncStatus();
+            syncButton.disabled = false;
+        }
+    });
 }
 
-// --- Example of how to use it in your game modal ---
-/*
-// Inside your quiz logic, you would add a "Hint" button:
-const hintButton = document.createElement('button');
-hintButton.textContent = 'Get Hint 💡';
-hintButton.className = 'btn-ghost';
-hintButton.onclick = () => {
-    const questionId = 'math_q1'; // Get this from your question object
-    const hint = getTutorHint(questionId);
-    alert(`Tutor Says: ${hint}`);
-};
-gameArea.appendChild(hintButton);
-*/
+function updateSyncStatus() {
+    const syncButton = document.getElementById('sync-button');
+    if (!navigator.onLine) {
+        syncButton.textContent = 'Offline';
+        syncButton.title = 'You are currently offline';
+        syncButton.classList.add('offline');
+    } else {
+        const lastSync = localStorage.getItem('lastSync');
+        const title = lastSync ? `Last Synced: ${new Date(lastSync).toLocaleString()}` : 'Ready to sync';
+        syncButton.textContent = '🔄';
+        syncButton.title = title;
+        syncButton.classList.remove('offline');
+    }
+}
