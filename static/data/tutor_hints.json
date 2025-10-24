@@ -1,0 +1,30 @@
+{
+    "math_q1": [
+        "Think about what '2 + 2' means. You are combining two groups.",
+        "The answer is one more than 3."
+    ],
+    "math_q2": [
+        "It's in the name: 'Tri' means three.",
+        "A square has four sides, a triangle has..."
+    ],
+    "science_q1": [
+        "This is a key property of water. It's a 'boiling' point, not a 'freezing' point.",
+        "Think in Celsius, the standard for science."
+    ],
+    "tech_q1": [
+        "This is a chain of logic. Think of it as numbers: A=3, B=2, C=1.",
+        "Follow the 'greater than' (>) symbol."
+    ],
+    "tech_q2": [
+        "Imagine you have a hand of cards and you want to sort them.",
+        "You would look for the lowest card first to put on the left."
+    ],
+    "eng_q1": [
+        "If you put all your weight on one tiny spot, what happens?",
+        "A bridge needs to distribute the load."
+    ],
+    "agri_q1": [
+        "Sunlight comes from the sky, not the soil.",
+        "Plants 'eat' from the soil. What would you call plant food?"
+    ]
+}
