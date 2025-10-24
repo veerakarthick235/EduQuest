@@ -1,0 +1,51 @@
+{
+    "algebra": {
+        "id": "math_q1",
+        "title": "Mission: Algebra Basics",
+        "question": "What is 2 + 2?",
+        "options": ["3", "4", "5"],
+        "answer": "4"
+    },
+    "geometry": {
+        "id": "math_q2",
+        "title": "Mission: Geometry",
+        "question": "How many sides does a triangle have?",
+        "options": ["3", "4", "5"],
+        "answer": "3"
+    },
+    "physics": {
+        "id": "science_q1",
+        "title": "Mission: Physics 101",
+        "question": "What is the boiling point of water?",
+        "options": ["90°C", "100°C", "110°C"],
+        "answer": "100°C"
+    },
+    "logic_puzzles": {
+        "id": "tech_q1",
+        "title": "Mission: Logic Puzzles",
+        "question": "If A > B and B > C, which statement is true?",
+        "options": ["A < C", "A = C", "A > C"],
+        "answer": "A > C"
+    },
+    "algorithms": {
+        "id": "tech_q2",
+        "title": "Mission: Basic Algorithms",
+        "question": "What is the first step in sorting numbers from smallest to largest?",
+        "options": ["Find the largest number", "Find the smallest number", "Average all numbers"],
+        "answer": "Find the smallest number"
+    },
+    "bridge_design": {
+        "id": "eng_q1",
+        "title": "Mission: Bridge Design",
+        "question": "To build a strong bridge, forces from weight should be...?",
+        "options": ["Concentrated on one point", "Spread out evenly", "Pushed upwards only"],
+        "answer": "Spread out evenly"
+    },
+    "crop_science": {
+        "id": "agri_q1",
+        "title": "Mission: Crop Science",
+        "question": "What do plants primarily need from soil to grow?",
+        "options": ["Sunlight", "Nutrients", "Pollen"],
+        "answer": "Nutrients"
+    }
+}
